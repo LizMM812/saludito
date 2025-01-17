@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Saludos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #007bff46;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #saludo {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Generador de Saludos</h1>
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="¿Cómo te llamas?" required>
+    <input type="text" id="color" placeholder="¿Cuál es tu color favorito?" required>
+    <input type="text" id="animal" placeholder="¿Cuál es tu animal favorito?" required>
+    <button type="button" onclick="generarSaludo()">Generar Saludo</button>
+  </form>
+  <p id="saludo"></p>
+
+  <script>
+    function generarSaludo() {
+      // Obtener valores de los campos
+      const nombre = document.getElementById('nombre').value;
+      const color = document.getElementById('color').value;
+      const animal = document.getElementById('animal').value;
+
+      // Generar el saludo
+      const saludo = `Hola, ${nombre}. Es genial saber que te gusta el color ${color} y que tu animal favorito es el ${animal}. ¡Que tengas un excelente día!`;
+
+      // Mostrar el saludo en la página
+      document.getElementById('saludo').innerText = saludo;
+    }
+  </script>
+</body>
+</html>
